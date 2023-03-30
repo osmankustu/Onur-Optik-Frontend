@@ -1,0 +1,32 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Çerceve Marka Listele</h5>
+          <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">    
+                        <th>Id</th>
+                        <th>Marka Adı</th>
+                        
+                    </thead>
+                    <tbody *ngFor="let brand of Brands">
+                        <tr>
+                            <td>{{brand.brandId}} </td>
+                            <td>{{brand.markaAdi}}</td>
+                            <td><button class="btn btn-warning" routerLink="guncelle/{{brand.brandId}}">Düzenle</button></td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

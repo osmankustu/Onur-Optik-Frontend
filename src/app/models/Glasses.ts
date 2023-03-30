@@ -1,0 +1,24 @@
+export default interface Glasses {
+    GlassesId:number
+    CustomerId:number
+    GlassBrandId:number
+    GlassCategoryId:number
+    GlassType:string
+    Rsph:string
+    Rcyl:string
+    Raks:string
+    Lsph:string
+    Lcyl:string
+    Laks:string
+    FrameBrandId:number
+    FrameModel:string
+    FrameEcartman:string
+    FrameColor:string
+    FrameSerialNumber:string
+    PrescriptNo:string
+    PrescriptDate:Date
+    IsEntered:string
+    gozlukNot:string
+    satisTarihi:Date
+    tutar:string
+}

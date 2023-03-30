@@ -1,0 +1,78 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">{{customer.adi}} {{customer.soyadi}} İsimli Müşteri'nin Detayları</h4>
+    </div>
+    <div class="card-body">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Müşteri Bilgileri</h5>
+            </div>
+            
+            <div class="card-body ">
+                <!-- Kimlik Bilgileri Section -->
+                    <div class="card col-12">    
+                        <div class="card-body row ">
+                            <div class="col-4">
+                                
+                                <p><strong>Kimlik Numarası: </strong>{{customer.nationalIdentity}}</p>
+                                <p><strong>Yakın Kimlik Numarası: </strong>{{customer.yakinNationalIdentity}}</p>
+                                <p><strong>Adı: </strong>{{customer.adi}}</p>
+                                <p><strong>Soyadı: </strong>{{customer.soyadi}}</p>
+                                <p><strong>Doğum Tarihi: </strong>{{customer.dateOfBirth | date}}</p>
+                                <p><strong>Kayıt Tarihi: </strong>{{customer.kayitTarihi | date}}</p>
+                            </div>
+                            <div class="col-4">
+                                <p><strong>Telefon Numarası: </strong>{{customer.phoneNumber}}</p>
+                                <p><strong>Adres: </strong>{{customer.address}}</p>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-warning" routerLink="guncelle">Düzenle</button>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+
+                
+            
+
+            <!-- Satılan Ürünler Section  -->
+             <div class="card">
+              <h6 class="card-header">Satılan Ürünler</h6>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>İd</th>
+                                <th>Ürün Adı </th>
+                                <th>Çerceve Modeli</th>
+                                <th>Reçete Numarası</th>
+                                <th>Satış Tarihi</th>
+                                <th>Tutar</th>
+                                <th>Satış Tarihi</th>
+                                
+                            </thead>
+                            <tbody >
+                                 <tr *ngFor="let satis of satis">
+                                    <td>{{satis.glassesId}}</td>
+                                    <td>{{satis.frameBrand}} {{satis.glassBrand}} {{satis.glassCategory}} {{satis.glassType}} Gözlük</td>
+                                    <td>{{satis.frameModel}}</td>
+                                    <td>{{satis.prescriptNo}}</td>
+                                    <td>{{satis.satisTarihi |date}}</td>
+                                    <td>{{satis.tutar}} ₺</td>
+                                    <td><Button class="btn btn-danger" routerLink="/islemler/satis/satislistele/detail/{{satis.glassesId}}">Detaylara Git</Button></td>
+                                    
+                                </tr> 
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+</div>

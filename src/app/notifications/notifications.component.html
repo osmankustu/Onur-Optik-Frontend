@@ -1,0 +1,48 @@
+<div class="panel-header">
+  <div class="header text-center">
+    <h2 class="title">Bildirim Merkezi</h2>
+    
+  </div>
+</div>
+<div class="main-content">
+  <div class="row">
+    <!-- Reçete Bildirimleri -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Reçete Bildirimleri</h4>
+        </div>
+        <div class="card-body" >
+          <div *ngFor="let prescript of prescripts" class="alert alert-info alert-with-icon" data-notify="container">
+            <!-- <button type="button" aria-hidden="true" class="close">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+            </button> -->
+            <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+            <span  data-notify="message">{{prescript.adi + " " + prescript.soyadi + " isimli müşterinin reçete numarası medulaya girilmemiştir " }}
+              <p>Reçete No:  {{prescript.prescriptNo}}</p>  
+               <p>Son Sisteme Girme Tarihi: {{ prescript.prescriptDate |date}}</p></span>
+               <button routerLink="/islemler/musteri/listele/detail/{{prescript.customerId}}"  class="btn btn-primary">Ürün Bilgileri</button>
+               
+          </div>       
+        </div>
+      </div>
+    </div>
+     <!-- Doğum Günü Bildirimleri -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Doğum Günü Bildirimleri </h4>
+        </div>
+        <div class="card-body">
+          <div class="alert alert-primary" *ngFor="let born of borns">
+            <button type="button" aria-hidden="true" class="close">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+            </button>
+            <span>{{born.adi +" " + born.soyadi}} isimli müşterinin doğum günüdür . Telefon Numarası : {{born.phoneNumber}}</span>
+          </div>
+          
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>

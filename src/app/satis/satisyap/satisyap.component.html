@@ -1,0 +1,313 @@
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Satış İşlemleri</h5>
+          <div class="card">
+            <div class="card-body">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary"  (click)="openCustomerAddDialog()">
+                  Müşteri Ekle
+                </button>
+
+              <form [formGroup]="SatisForm">
+                <h1 class="h3 mb-3 fw-normal">Satış Yap</h1>
+
+
+                <!-- Müşteri Bilgileri Section-->
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="card-title">Muşteri Bilgileri</h6>
+
+                    <!-- <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="Radio" value="1">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                       <h6>Var Olan Müşteri</h6> 
+                      </label>
+                    </div> -->
+
+                    <!-- <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="" value="0"
+                        checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        <h6>Yeni Müşteri</h6>
+                      </label>
+                    </div> -->
+                    
+                    <div class="input-group mb-3" id="musteriExist">
+                      <label class="input-group-text" for="inputGroupSelect01">Müşteri Seç</label>
+                      <select class="form-select col-md-5" id="customerId" formControlName="customerId" >
+                        <option  *ngFor="let customer of customers " value="{{customer.musteriId}}">{{customer.nationalIdentity}}</option>
+                      </select>
+                    </div>
+
+                    
+                  </div>
+                </div>
+
+                <!--Cam Bilgileri Section-->
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="card-title">Cam Bilgileri</h6>
+                    
+                    <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Cam Markası :</label>
+                  <select class="form-select col-md-2" id="inputGroupSelect01" formControlName="glassBrandId">
+                    <option *ngFor="let brand of glassBrand" value="{{brand.brandId}}">{{brand.markaAdi}}</option>
+                  </select>
+
+      
+                  <label class="input-group-text" for="inputGroupSelect01">Cam Kategorisi :</label>
+                  <select class="form-select col-md-2" id="inputGroupSelect01" formControlName="glassCategoryId">
+                    <option *ngFor="let category of glassCategory" value="{{category.categoryId}}">
+                      {{category.categoryName}}</option>
+                  </select>
+
+
+                  <label class="input-group-text" for="inputGroupSelect01">Cam Türü:</label>
+                  <select class="form-select col-md-2" id="inputGroupSelect01" formControlName="glassType">
+                    <option value="Uzak">Uzak</option>
+                    <option value="Yakın">Yakın</option>
+                  </select>
+
+                  
+
+
+                </div>
+                <!--Sol Göz Section-->
+                <div class="card col-md-6">
+                  <div class="card-body">
+                  <h6>Sol Göz Bilgileri</h6>
+                  
+                  <label for="floatingInput">SPH:</label>
+                  <div class="form-floating">
+                  <input
+                    formControlName="lsph"
+                    type="text"
+                    class="form-control"
+                    id="frameModel"
+                    placeholder="SPH"
+                    />
+                  </div>
+
+                  <label for="floatingInput">CYL:</label>
+                <div class="form-floating">
+                <input
+                  formControlName="lcyl"
+                  type="text"
+                  class="form-control"
+                  id="frameModel"
+                  placeholder="CYL"
+                  />
+                </div>
+
+                <label for="floatingInput">AKS:</label>
+                <div class="form-floating">
+                <input
+                  formControlName="laks"
+                  type="text"
+                  class="form-control"
+                  id="frameModel"
+                  placeholder="AKS"
+                  />
+                </div>
+
+
+                </div>
+                </div>
+                <!-- Sağ Göz Section -->
+                <div class="card col-md-6" >
+                  <div class="card-body">
+                    <h6>Sağ Göz Bilgileri</h6>
+
+                <label for="floatingInput">SPH:</label>
+                <div class="form-floating">
+                <input
+                  formControlName="rsph"
+                  type="text"
+                  class="form-control"
+                  id="frameModel"
+                  placeholder="SPH"
+                  />
+                </div>
+
+
+                <label for="floatingInput">CYL:</label>
+                <div class="form-floating">
+                <input
+                  formControlName="rcyl"
+                  type="text"
+                  class="form-control"
+                  id="frameModel"
+                  placeholder="CYL"
+                  />
+                </div>
+
+
+                <label for="floatingInput">AKS:</label>
+                <div class="form-floating">
+                <input
+                  formControlName="raks"
+                  type="text"
+                  class="form-control"
+                  id="frameModel"
+                  placeholder="AKS"
+                  />
+                </div>
+
+
+                </div>
+                </div>
+                
+                </div>
+                </div>
+
+                <!--Çerceve Bilgileri Section -->
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="card-title">Çerçeve Bilgileri</h6>
+                    
+                    <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Çerçeve Markası :</label>
+                  <select class="form-select col-md-2" id="inputGroupSelect01" formControlName="frameBrandId">
+                    <option *ngFor="let brand of frameBrands" value="{{brand.brandId}}">{{brand.markaAdi}}</option>
+                  </select>
+                </div>
+
+                <label for="floatingInput">Çerçeve Modeli :</label>
+                <div class="form-floating">
+                <input
+                  formControlName="frameModel"
+                  type="text"
+                  class="form-control"
+                  id="frameModel"
+                  placeholder="Model"
+                  />
+                </div>
+
+                
+                <label for="floatingInput">Çerçeve Seri Numarası :</label>
+                <div class="form-floating">
+                <input
+                  formControlName="frameSerialNumber"
+                  type="text"
+                  class="form-control"
+                  id="frameSerialNumber"
+                  placeholder="S/N"
+                  />
+                </div>
+
+                <label for="floatingInput">Renk :</label>
+                <div class="form-floating">
+                <input
+                  formControlName="frameColor"
+                  type="text"
+                  class="form-control"
+                  id="frameColor"
+                  placeholder="Renk"
+                  />
+                </div>
+
+                <label for="floatingInput">Ekartman :</label>
+                <div class="form-floating">
+                <input
+                  formControlName="frameEcartman"
+                  type="text"
+                  class="form-control"
+                  id="frameEcartman"
+                  placeholder="Ekartman"
+                  />
+                </div>
+                
+                </div>
+                </div>
+                <!-- Gözlük Bilgileri Section-->
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="card-title">Gözlük Bilgileri</h6>
+                    
+
+                <label for="floatingInput">Reçete Numarası :</label>
+                <div class="form-floating">
+                <input
+                  formControlName="prescriptNo"
+                  type="text"
+                  class="form-control"
+                  placeholder="Reçete Numarası"
+                  />
+                </div>
+
+                <label for="floatingInput">Reçete Son Tarihi:</label>
+                <div class="form-floating col-md-2">
+                <input
+                  formControlName="prescriptDate"
+                  type="date"
+                  class="form-control"
+                  placeholder=""
+                  />
+                </div>
+                <!--    Radio Buton Is Check Out Prescript For Medula and Notfications             -->
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" value="1"  formControlName="isEntered" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Reçete Medula'ya Girildi
+                  </label>
+                </div>
+                
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" formControlName="isEntered"  value="0" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Reçete Medula'ya Girilmedi
+                  </label>
+                </div>
+
+                <label for="floatingTextarea2">Gözlük Notu :</label>
+                <div class="form-floating">
+                  <input class="form-control" type="text" formControlName="gozlukNot" style="height: 100px;"/>
+                </div>
+
+                <label for="floatingInput">Satış Tarihi:</label>
+                <div class="form-floating col-md-2">
+                <input
+                  formControlName="satisTarihi"
+                  type="date"
+                  class="form-control"
+                  placeholder=""
+                  />
+                </div>
+                
+
+                <label for="floatingInput">Tutar :</label>
+                
+                <div class="input-group col-md-2">
+                <input 
+                  formControlName="tutar"
+                  type="number"
+                  class="form-control "
+                  placeholder="tutar"
+                  />
+                  <span class="input-group-text">₺</span>  
+                  
+                </div>
+                
+
+
+                </div>
+                </div>
+
+                <button class="btn btn-warning" (click)="add()">ekle</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

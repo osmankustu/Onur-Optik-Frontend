@@ -1,0 +1,15 @@
+
+
+
+Backend işlemleri :
+
+bazı controllerlarda update metodu yazılacak 
+
+
+Frontend İşlemleri :
+
+update metodları yazıldı detaya geçilecek 
+
+DataBase İşlemleri : 
+
+veresiye defteri veritabanı şema ve algoritması çizilecek ve test edilecek 

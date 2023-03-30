@@ -1,0 +1,107 @@
+<mat-dialog-content class="d-flex justify-content-center">
+<div class="col-lg-3 ">
+<form [formGroup]="musteriAddForm">
+    <h1 class="h3 mb-3 fw-normal">Müşteri Ekle</h1>
+
+    <label for="floatingInput">Adı</label>
+    <div class="form-floating">
+      <input
+        formControlName="adi"
+        type="text"
+        class="form-control"
+        id="adi"
+        placeholder="adı"
+      />
+      
+    </div>
+    <label for="floatingInput">Soyadı</label>    
+    <div class="form-floating">
+      <input
+      formControlName="soyadi"
+        type="text"
+        class="form-control"
+        id="soyadi"
+        placeholder="Soyadı"
+      />
+      
+    </div>
+
+    <label for="floatingInput">Tc Kimlik No</label>    
+    <div class="form-floating">
+      <input
+      formControlName="nationalIdentity"
+        type="text"
+        class="form-control"
+        id="nationalIdentity"
+        placeholder="Tc Kimlik No"
+      />
+      
+    </div>
+
+    <label for="floatingInput">Yakının TC kimlik No</label>    
+    <div class="form-floating">
+      <input
+      formControlName="yakinNationalIdentity"
+        type="text"
+        class="form-control"
+        id="yakinNationalIdentity"
+        placeholder="Soyadı"
+      />
+      
+    </div>
+
+    <label for="floatingInput">Telefon Numarası</label>    
+    <div class="form-floating">
+      <input
+      formControlName="phoneNumber"
+        type="text"
+        class="form-control"
+        id="phoneNumber"
+        placeholder="Telefon Numarası"
+      />
+      
+    </div>
+
+    <label for="floatingInput">Adres</label>    
+    <div class="form-floating">
+      <input
+      formControlName="address"
+        type="text"
+        class="form-control"
+        id="address"
+        placeholder="Adres"
+      />
+      
+    </div>
+
+    <label for="floatingInput">Doğum Tarihi</label>    
+    <div class="form-floating">
+      <input
+      formControlName="dateOfBirth"
+        type="date"
+        class="form-control"
+        id="DateOfBrith"
+        placeholder="Doğum Tarihi"
+      />
+      
+    </div>
+    
+    <div class="row">
+      <div class="col">
+        <button class="w-100 btn btn-lg btn-danger" mat-button mat-dialog-close>Cancel</button>
+      </div>
+      <div class="col">
+        <button class="w-100 btn btn-lg btn-primary" mat-button (click)="add()" mat-dialog-close="{{success}}">
+          Kaydet
+        </button>
+      </div>  
+    </div>
+    
+    
+  </form> 
+</div>
+
+</mat-dialog-content>
+
+
+

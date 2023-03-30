@@ -1,0 +1,30 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Müşteri İşlemleri</h5>
+        </div>
+        <div class="row">
+          <div class="col col-md-12">
+          <div class="card" style="width: 18rem; float: left; margin-left:10px; " *ngFor="let item of islemMenu">
+              <div class="card-body">
+              <div style="text-align: center;">
+                  <img src="{{item.islemIcon}}" class="card-img-top" style="width: 100px; height: 100px;">
+              </div>
+              <h5 class="card-title" style="text-align: center;"><a href="{{item.islemUrl}}" class="btn btn-danger">{{item.islemAdi}}</a></h5>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+
+            </div>
+            </div>
+            </div>
+            
+      
+    
+      

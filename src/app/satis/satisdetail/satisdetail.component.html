@@ -1,0 +1,99 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content" *ngFor=" let data of datas">
+<div class="card">
+    <div class="card-header" >
+        <h4 class="card-title" > {{data.glassesId + " "}} Numaralı Satış Detayları</h4>
+    </div>
+    <div class="card-body">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Müşteri Bilgileri</h5>
+            </div>
+            
+            <div class="card-body">
+                <!-- Kimlik Bilgileri Section -->
+              <div class="card col-12">
+                    <div class="card-body row">
+                        <div class="col-4">    
+                        <p><strong>Kimlik Numarası: </strong>{{data.kimlikNo}}</p>
+                        <p><strong>Yakın Kimlik Numarası: </strong> {{data.yKimlikNo}}</p>
+                        <p><strong>Adı: </strong>{{data.adi}}</p>
+                        <p><strong>Soyadı: </strong>{{data.soyadi}}</p>
+                    </div>
+                        <div class="col-4">
+                            <p><strong>Telefon Numarası: </strong>{{data.phoneNumber}}</p>
+                            <p><strong>Reçete Numarası: </strong>{{data.prescriptNo}}</p>
+                            <p><strong>Satış Tarihi: </strong>{{data.satisTarihi |date}}</p>
+                            <p><strong>Tutar: </strong>{{data.tutar + " ₺"}}</p>
+
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-primary" routerLink="/islemler/musteri/listele/detail/{{data.customerId}}">Müşteri'ye Git</button>
+                            <button class="btn btn-warning" routerLink="/islemler/satis/satisguncelle/{{data.glassesId}}">Düzenle</button>
+                        </div>
+                    </div>
+                </div>    
+                </div>
+                <!-- Ürün Bilgileri Section  -->
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>Ürün Bilgileri</h5>
+                </div>
+                
+                <!-- Cam Nitelik Section -->
+                <div class="card">
+                    <div class="card-body row">
+                        <div class="col-3">
+                            <p><strong>Cam Markası: </strong>{{data.glassBrand}}</p>
+                        </div>
+                        <div class="col-3">
+                            <p><strong>Cam Kategorisi: </strong>{{data.glassCategory}}</p>
+                        </div>
+                        <div class="col-3">
+                            <p><strong>Cam Türü: </strong>{{data.glassType}}</p>
+                        </div>
+                    </div>
+
+                    <!-- Cam Ölçü Section -->
+                    <div class="card-body row">
+                        <div class="card col-6">
+                            <div class="card-title">
+                                <h5>Sağ Göz Bilgileri</h5>
+                            </div>
+                                <p><strong>SPH: </strong>{{data.rsph}}</p>
+                                <p><strong>CYL: </strong>{{data.rcyl}}</p>
+                                <p><strong>AKS: </strong>{{data.raks}}</p>
+                            
+                        </div>
+                        <div class="card col-6">
+                            <div class="card-title">
+                                <h5>Sol Göz Bilgileri</h5>
+                            </div>
+                                <p><strong>SPH: </strong>{{data.lsph}}</p>
+                                <p><strong>CYL: </strong>{{data.lcyl}}</p>
+                                <p><strong>AKS: </strong>{{data.laks}}</p>
+                            
+                        </div>
+                     </div>
+                     <div class="card">
+                        <div class="card-header">
+                            <h5>Çerçeve Bilgileri</h5>
+                        </div>
+                        <div class="card-body row">
+                            <div class="col-3">
+                                <p><strong>Çerçeve Markası: </strong>{{data.frameBrand}}</p>
+                                <p><strong>Çerçeve Modeli: </strong>{{data.frameModel}}</p>
+                                <p><strong>Çerçeve Seri No: </strong>{{data.frameSerialNumber}}</p>
+                            </div>
+                            <div class="col-3">
+                                <p><strong>Çerçeve Ekartman No: </strong>{{data.frameEcartman}}</p>
+                                <p><strong>Çerçeve Rengi: </strong>{{data.frameColor}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+</div>
+</div>

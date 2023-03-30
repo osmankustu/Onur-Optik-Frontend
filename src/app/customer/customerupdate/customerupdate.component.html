@@ -1,0 +1,141 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Müşteri İşlemleri</h5>
+        </div>
+ <div class="card-body">
+          
+            <form [formGroup]="MusteriGuncelleForm">
+                <h1 class="h3 mb-3 fw-normal">{{customer.adi +" "+customer.soyadi}} İsimli Müşteriyi Güncelle</h1>
+          
+                <label for="floatingInput">Müşteri Id</label>
+                <div class="form-floating">
+                  <input
+                    formControlName="musteriId"
+                    type="text"
+                    [(ngModel)]="customer.musteriId"
+                    class="form-control"
+                    id="musteriId"
+                    placeholder="adı"
+                    disabled="true"
+                  />
+                  
+                </div>
+
+                <label for="floatingInput">Adı</label>
+                <div class="form-floating">
+                  <input
+                    formControlName="adi"
+                    type="text"
+                    [(ngModel)]="customer.adi"
+                    class="form-control"
+                    id="adi"
+                    placeholder="adı"
+                  />
+                  
+                </div>
+                <label for="floatingInput">Soyadı</label>    
+                <div class="form-floating">
+                  <input
+                  formControlName="soyadi"
+                    type="text"
+                    [(ngModel)]="customer.soyadi"
+                    class="form-control"
+                    id="soyadi"
+                    placeholder="Soyadı"
+                  />
+                  
+                </div>
+
+                <label for="floatingInput">Tc Kimlik No</label>    
+                <div class="form-floating">
+                  <input
+                  formControlName="nationalIdentity"
+                    type="text"
+                    [(ngModel)]="customer.nationalIdentity"
+                    class="form-control"
+                    id="nationalIdentity"
+                    placeholder="Tc Kimlik No"
+                  />
+                  
+                </div>
+
+                <label for="floatingInput">Yakının TC kimlik No</label>    
+                <div class="form-floating">
+                  <input
+                  formControlName="yakinNationalIdentity"
+                    type="text"
+                    [(ngModel)]="customer.yakinNationalIdentity"
+                    class="form-control"
+                    id="yakinNationalIdentity"
+                    placeholder="Soyadı"
+                  />
+                  
+                </div>
+
+                <label for="floatingInput">Telefon Numarası</label>    
+                <div class="form-floating">
+                  <input
+                  formControlName="phoneNumber"
+                    type="text"
+                    [(ngModel)]="customer.phoneNumber"
+                    class="form-control"
+                    id="phoneNumber"
+                    placeholder="Telefon Numarası"
+                  />
+                  
+                </div>
+
+                <label for="floatingInput">Adres</label>    
+                <div class="form-floating">
+                  <input
+                  formControlName="address"
+                    type="text"
+                    [(ngModel)]="customer.address"
+                    class="form-control"
+                    id="address"
+                    placeholder="Adres"
+                  />
+                  
+                </div>
+
+                <label for="floatingInput">Doğum Tarihi</label>    
+                <div class="form-floating">
+                  <input
+                  formControlName="dateOfBirth"
+                    type="date"
+                    [(ngModel)]="customer.dateOfBirth"
+                    class="form-control"
+                    id="DateOfBrith"
+                    placeholder="Doğum Tarihi"
+                  />
+                  
+                </div>
+
+                <label for="floatingInput">Kayıt Tarihi</label>    
+                <div class="form-floating">
+                  <input
+                  formControlName="kayitTarihi"
+                    type="date"
+                    [(ngModel)]="customer.kayitTarihi"
+                    class="form-control"
+                    id="Kayıt Tarihi"
+                    placeholder="Kayıt Tarihi"
+                    disabled="true"
+                  />
+                  
+                </div>
+                
+                <button class="w-100 btn btn-lg btn-primary" (click)="update()" >
+                  Güncelle
+                </button>
+                
+              </form> 
+ </div>
+      </div>
+    </div></div>
+</div>

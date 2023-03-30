@@ -1,0 +1,49 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Satış Listele</h5>
+          <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class=" text-primary">    
+                        <th>Id</th>
+                        <th>Adı</th>
+                        <th>Soyadı</th>
+                        <th>Kimlik No</th>
+                        <th>Satış Numarası</th>
+                        <th>Reçete Numarası</th>
+                        <th>Satış Tarihi</th>
+                        <th>Telefon</th>
+                        <th>Tutar</th>
+                        <th>Satış Tarihi</th>
+                        
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let satis of satis">
+                            <td>{{satis.musteriId}}</td>
+                            <td>{{satis.adi}}</td>
+                            <td>{{satis.soyadi}}</td>
+                            <td>{{satis.nationalIdentity}}</td>
+                            <td>{{satis.glassesId}}</td>
+                            <td>{{satis.prescriptNo}}</td>
+                            <td>{{satis.satisTarihi |date}}</td>
+                            <td>{{satis.phoneNumber}}</td>
+                            <td>{{satis.tutar}} ₺</td>
+                            <td>{{satis.satisTarihi |date}}</td>
+                            <td><Button class="btn btn-primary" (click)="getGlassesDetail(satis.glassesId)" routerLink="detail/{{satis.glassesId}}">Satış Detayları</Button></td>
+                            
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

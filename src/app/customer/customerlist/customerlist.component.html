@@ -1,0 +1,63 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title"> Müşteri Listesi</h4>
+        
+        <div class="row">
+        <div class="col-3">
+        <label for="filterText" style="color: black;">İsim</label>
+        <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="isim Giriniz">
+        </div>
+        
+        <div class="col-3">
+        <label for="filterIdentity" style="color: black;">Kimlik Numarası </label>
+        <input type="text" [(ngModel)]="filterIdentity" class="form-control" id="filterIdentity" placeholder="kimlik numarası giriniz">
+        </div>
+
+        <div class="col-3">
+            <label for="filterIdentity" style="color: black;">Yakın Kimlik Numarası </label>
+            <input type="text" [(ngModel)]="filterYakinIdentity" class="form-control" id="filterIdentity" placeholder=" Yakın kimlik numarası giriniz">
+            </div>
+
+        
+        
+    </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class=" text-primary">    
+                    <th>Id</th>
+                    <th>Adı</th>
+                    <th>Soyadı</th>
+                    <th>Kimlik No</th>
+                    <th>Y. Kimlik No</th>
+                    <th>Adres</th>
+                    <th>Telefon</th>
+                    <th>DoğumTarihi</th>
+                    <th>Kayıt Tarihi</th>
+                    
+                </thead>
+                <tbody *ngFor="let customer of customers |filterPipe:filterText |identityPipe:filterIdentity |yakinidentityPipe:filterYakinIdentity">
+                    <tr>
+                        <td>{{customer.musteriId}}</td>
+                        <td>{{customer.adi}}</td>
+                        <td>{{customer.soyadi}}</td>
+                        <td>{{customer.nationalIdentity}}</td>
+                        <td>{{customer.yakinNationalIdentity}}</td>
+                        <td>{{customer.address}}</td>
+                        <td>{{customer.phoneNumber}}</td>
+                        <td>{{customer.dateOfBirth |date}}</td>
+                        <td>{{customer.kayitTarihi |date}}</td>
+                        <td><Button (click)="getCustomerDetail(customer.musteriId)" class="btn btn-danger" routerLink="detail/{{customer.musteriId}}">Müşteri Detayları</Button></td>
+                        
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

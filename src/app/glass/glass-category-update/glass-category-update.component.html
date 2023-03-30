@@ -1,0 +1,48 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Cam İşlemleri</h5>
+          <div class="card-body">
+          
+          <form [formGroup]="glassCategoryUpdateForm">
+              <h1 class="h3 mb-3 fw-normal">Cam Kategori Güncelle</h1>
+
+              <label for="floatingInput">Kategori Id</label>
+              <div class="form-floating">
+                <input
+                  formControlName="CategoryId"
+                  type="text"
+                  class="form-control"
+                  id="CategoryId"
+                  [(ngModel)]="glassCategory.categoryId"
+                  placeholder="Kategori Adı"
+                  disabled="true"
+                />
+              </div>
+              
+              <label for="floatingInput">Kategori Adı</label>
+              <div class="form-floating">
+                <input
+                  formControlName="CategoryName"
+                  type="text"
+                  class="form-control"
+                  id="CategoryName"
+                  [(ngModel)]="glassCategory.categoryName"
+                  placeholder="Kategori Adı"
+                />
+                <button class="btn btn-danger" (click)="update()">Güncelle</button>
+              </div>
+          </form>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+        
